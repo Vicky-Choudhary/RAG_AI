@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Vector store / data artifacts
+*.db
+*.sqlite3
+chroma/
+faiss_index/
+data/raw/
+data/processed/
+
+# Node (frontend)
+node_modules/
+dist/
+build/
+.next/
+.vite/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

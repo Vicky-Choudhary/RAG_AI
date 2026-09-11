@@ -1,5 +1,5 @@
 from pathlib import Path
-from pypdf import PdfReader
+import pymupdf4llm
 
 
 def load_pdf(pdf_path: str) -> list[dict]:
@@ -7,11 +7,5 @@ def load_pdf(pdf_path: str) -> list[dict]:
     path = Path(pdf_path)
     if not path.is_file():
         raise FileNotFoundError(path)
-
-    reader = PdfReader(str(path))
-    pages = []
-    for i, page in enumerate(reader.pages, start=1):
-        text = (page.extract_text() or "").strip()
-        if text:
-            pages.append({"page": i, "text": text, "source": str(path)})
-    return pages
+    markdown = pymupdf4llm.to_markdown(path)
+    return markdown

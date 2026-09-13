@@ -12,7 +12,7 @@ def load_pdf(pdf_path: str) -> list[dict]:
         raise FileNotFoundError(path)
 
     document_id = str(path)
-    source_uri = str(path.name)
+    source_uri = str(path)
 
     with open(path, "rb") as f:
         file_bytes = f.read()

@@ -39,6 +39,6 @@ def load_pdf(pdf_path: str) -> list[dict]:
             "source_uri": source_uri,
             "document_version": document_version,
             "content_hash": content_hash,
-            "ingest_at": ingested_at
+            "ingested_at": ingested_at
         })
     return records
